@@ -50,6 +50,6 @@ app.post("/chat", (req, res) => {
   console.log({ question });
 });
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log("Server is listening on port 3000");
 });
