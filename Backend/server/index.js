@@ -1,5 +1,4 @@
 const express = require("express");
-// const OPENAI_API_KEY = "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";
 const { Configuration, OpenAIApi } = require("openai");
 const cors = require("cors");
 require("dotenv").config()
