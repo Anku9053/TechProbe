@@ -49,6 +49,32 @@ app.post("/chat", (req, res) => {
   console.log({ question });
 });
 
+
+// interview questions
+app.post('/interview-question', async (req, res) => {
+  try {
+    const question = req.body.question;
+
+    const response = await openai.createCompletion({
+        model: "text-davinci-003",
+        prompt: question,
+        temperature: 0.5,
+        max_tokens: 150,
+        top_p: 1.0,
+        frequency_penalty: 0.0,
+        presence_penalty: 0.0,
+    });
+
+    res.status(200).send({
+      bot: response.data.choices[0].text
+    });
+
+  } catch (error) {
+    console.error(error)
+    res.status(500).send(error || 'Something went wrong');
+  }
+})
+
 app.listen(3000, () => {
   console.log("Server is listening on port 3000");
 });
