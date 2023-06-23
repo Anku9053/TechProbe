@@ -1,6 +1,76 @@
 .App {
   text-align: center;
+  display: flex;
+  background-color: #282c34;
+  color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
+
+
+
+.sidemenu{
+  width: 260px;
+  padding: 10px;
+  /* border: 1px solid white; */
+  background-color: #202123;
+}
+
+.side-menu-button{
+  padding: 12px;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-align: left;
+  transition: ease 0.25s all;
+
+}
+
+.chat-input-holder{
+padding: 24px;
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+}
+
+.chat-input-textarea{
+  background-color: #40414f;
+  width: 90%;
+  max-width: 800px;
+ 
+  border-radius: 5px;
+  max-height: 200px;
+  /* scroll-behavior: none; */
+  overflow-y: hidden;
+  border-color: none;
+  padding: 12px;
+  border: none;
+  color: white;
+  font-size: 1.25em;
+  outline: none;
+  box-shadow: 0 0 8px 0 rgb(0,0,0,0.25);
+}
+
+.side-menu-button span{
+  padding-left: 6px;
+  padding-right: 12px;
+  cursor: pointer;
+  /* font-size: 20px; */
+}
+.side-menu-button:hover{
+  cursor: pointer;
+  background-color: rgb(255,255,255,0.1);
+}
+.Chatbox{
+flex: 1;
+border: 1px solid white;
+background-color: #343541;
+position: relative;
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -28,6 +98,51 @@
   color: #61dafb;
 }
 
+.chat-log{
+/* padding: 24px; */
+text-align: left;
+/* display: flex; */
+}
+
+
+.chat-message.chatgpt{
+  background-color: #444654;
+
+
+}
+
+.avatar{
+background: white;
+border-radius: 50%;
+width: 40px;
+height: 40px;
+}
+
+.avatar.chatgpt{
+  background: #0da37f;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  }
+
+.chat-message-center{
+  max-width: 640px;
+margin-right: auto;
+display: flex;
+padding: 12px;
+padding-left: 24px;
+padding-right: 24px;
+margin-left: auto;
+}
+
+.message{
+  padding-left: 40px;
+  padding-right: 40px;
+  
+}
+
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +151,154 @@
     transform: rotate(360deg);
   }
 }
+
+.send_button{
+  cursor: pointer;
+  /* fontSize:2.0rem; */
+  font-size: 2.0rem;
+}
+.send_button2{
+  cursor: pointer;
+}
+
+.upgradeAi{
+  background: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+
+
+
+
+
+/* media query */
+@media screen and (max-width:1100px) and (min-width: 600px) {
+  .sidemenu{
+    
+    width: 35%;
+  }
+
+  .chat-log{
+    /* border: 2px solid red; */
+    padding: 10px;
+    width: 100%;
+    /* height: 30px; */
+    
+    margin: auto;
+    /* height: auto; */
+    /* font-size: 15px; */
+  }
+
+  .message{
+    font-size: 20px;
+    position: relative;
+    border: 2px solid red;
+    top: 2px;
+    /* text-shadow: #0fa; */
+  }
+
+  .chat-input-textarea{
+    /* display: flex; */
+    
+    /* border: 2px solid red; */
+    /* grid-template-columns: repeat(3,1fr); */
+    width: 80%;
+    /* align-items: flex-start; */
+    max-width: fit-content;
+    max-height: 130px;
+    min-width: 80%;
+    font-size: 30px;
+    min-height: 80px;
+  }
+
+  .send_button2{
+    /* border: 2px solid red; */
+    display: none;
+  }
+
+  .send_button{
+    border: 2px solid red;
+    font-size: 3.5rem;
+    position: absolute !important;
+    /* bottom: 20px; */
+    cursor: pointer;
+    transition: 0.2s all;
+    margin-bottom: 20px;
+  }
+
+  .chat-input-holder{
+    position: absolute;
+    margin-right: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ///////////////////////////////////////////// */
+/* If screen size is 600px wide, or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .sidemenu{
+    /* border: 2px solid red; */
+    display: none;
+  }
+
+  .chat-log{
+    /* border: 2px solid red; */
+    padding: 10px;
+    width: 100%;
+    margin: auto;
+    height: auto;
+    /* font-size: 15px; */
+  }
+
+  .message{
+    font-size: 15px;
+    position: relative;
+    top: 2px;
+    text-shadow: #0fa;
+  }
+
+  .chat-input-textarea{
+    /* display: flex; */
+    border: 2px solid red;
+    /* grid-template-columns: repeat(3,1fr); */
+    width: 80%;
+    /* align-items: flex-start; */
+    max-width: fit-content;
+    max-height: 130px;
+    min-width: 80%;
+    min-height: 50px;
+  }
+
+  .send_button2{
+    border: 2px solid red;
+    display: none;
+  }
+
+  .send_button{
+    position: absolute !important;
+    /* bottom: 20px; */
+    margin-bottom: 20px;
+  }
+
+  .chat-input-holder{
+    position: absolute;
+    margin-right: 10px;
+  }
+}
+
