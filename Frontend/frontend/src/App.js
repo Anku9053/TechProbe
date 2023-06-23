@@ -1,7 +1,22 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
+import { useState } from 'react';
 function App() {
+  const butt = true;
+
+  const [mike,setmike] = useState(false)
+
+  const handlemike = ()=>{
+    setmike(true)
+  }
+
+  const handlepost = ()=>{
+    console.log("post")
+  }
+  // The dummy text is applied here //////////////////////
+  const text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quisquam facere iure soluta animi asperiores illum! Temporibus eum iure nostrum dolorum iusto natus nihil deserunt delectus eaque, pariatur perferendis ipsam?";
+
   return (
     <div className="App">
       <header className="App-header">
@@ -23,3 +38,4 @@ function App() {
 }
 
 export default App;
+
