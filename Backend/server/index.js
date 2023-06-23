@@ -1,4 +1,5 @@
 const express = require("express");
+// const OPENAI_API_KEY = "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";
 const { Configuration, OpenAIApi } = require("openai");
 const cors = require("cors");
 require("dotenv").config()
@@ -18,12 +19,15 @@ app.get("/ping", (req, res) => {
   });
 });
 app.post("/chat", (req, res) => {
+ 
   const question = req.body.question;
+
+  const statmsg = `Give 5 interview questions related to ${question}`
 
   openai
     .createCompletion({
       model: "text-davinci-003",
-      prompt: question,
+      prompt: statmsg,
       max_tokens: 4000,
       temperature: 0,
     })
@@ -43,10 +47,10 @@ app.post("/chat", (req, res) => {
     .then((answer) => {
       res.json({
         answer: answer,
-        propt: question,
+        propt: statmsg,
       });
     });
-  console.log({ question });
+  console.log({ statmsg });
 });
 
 
