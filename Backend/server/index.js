@@ -1,5 +1,18 @@
 const express = require("express");
-// const OPENAI_API_KEY = "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";
+// const OPENAI_API_KEY = 
+const connection = require("./db");
+const userRoutes = require("./routes/users");
+const authRoutes = require("./routes/auth");
+
+
+
+
+
+
+
+
+
+"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";
 const { Configuration, OpenAIApi } = require("openai");
 const cors = require("cors");
 require("dotenv").config()
@@ -12,6 +25,9 @@ const app = express();
 app.use(cors());
 
 app.use(express.json());
+// routes
+app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);
 
 app.get("/ping", (req, res) => {
   res.json({
